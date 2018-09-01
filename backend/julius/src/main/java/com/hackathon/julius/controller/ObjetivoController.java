@@ -1,10 +1,7 @@
 package com.hackathon.julius.controller;
 
-import com.hackathon.julius.dto.GastoDTO;
 import com.hackathon.julius.dto.ObjetivoDTO;
-import com.hackathon.julius.entity.Gasto;
 import com.hackathon.julius.entity.Objetivo;
-import com.hackathon.julius.repository.GastoRepository;
 import com.hackathon.julius.repository.ObjetivoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "gastos")
+@RequestMapping(value = "objetivos")
 public class ObjetivoController {
 
     @Autowired
@@ -36,12 +33,12 @@ public class ObjetivoController {
     }
 
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Objetivo> insert(@RequestBody @Valid GastoDTO gastoDTO) {
+    public ResponseEntity<Objetivo> insert(@RequestBody @Valid ObjetivoDTO objetivoDTO) {
         Objetivo objetivo = new Objetivo();
 
-        objetivo.setDataEstipulada(gastoDTO.getData());
-        objetivo.setDescricao(gastoDTO.getDescricao());
-        objetivo.setValorEstipulado(gastoDTO.getValor());
+        objetivo.setDataEstipulada(objetivoDTO.getDataEstipulada());
+        objetivo.setDescricao(objetivoDTO.getDescricao());
+        objetivo.setValorEstipulado(objetivoDTO.getValorEstipulado());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(objetivoRepository.save(objetivo));
     }

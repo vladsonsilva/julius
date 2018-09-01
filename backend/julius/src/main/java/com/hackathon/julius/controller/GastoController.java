@@ -44,7 +44,7 @@ public class GastoController {
     }
 
     @PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Gasto> update (@PathVariable("id") Integer id, @RequestBody GastoDTO gastoDTO) {
+    public ResponseEntity<Gasto> update (@PathVariable("id") Integer id, @RequestBody @Valid GastoDTO gastoDTO) {
         Optional<Gasto> gastoOld = gastoRepository.findById(id);
         Gasto newGasto = new Gasto();
 
@@ -60,7 +60,7 @@ public class GastoController {
     }
 
     @DeleteMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Gasto> update (@PathVariable("id") Integer id) {
+    public ResponseEntity<Gasto> delete (@PathVariable("id") Integer id) {
         Optional<Gasto> gastoOld = gastoRepository.findById(id);
         gastoRepository.delete(gastoOld.get());
 
