@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "objetivos")
+@RequestMapping(value = "gastos")
 public class GastoController {
 
     @Autowired

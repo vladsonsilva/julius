@@ -1,6 +1,5 @@
 package com.hackathon.julius.repository;
 
-import com.hackathon.julius.controller.ReceitaController;
 import com.hackathon.julius.entity.Receita;
 import org.springframework.data.repository.CrudRepository;
 
