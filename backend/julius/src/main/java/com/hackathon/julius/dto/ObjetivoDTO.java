@@ -1,31 +1,21 @@
-package com.hackathon.julius.entity;
+package com.hackathon.julius.dto;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
-@Entity
-public class Objetivo {
+public class ObjetivoDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-
+    @NotEmpty(message = "O campo descrição é obrigatório")
     private String descricao;
+
+    @NotNull(message = "O campo data estipulada é obrigatório")
     private LocalDate dataEstipulada;
+
+    @NotNull(message = "O campo valor estipulado é obrigatório")
     private Double valorEstipulado;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDescricao() {
         return descricao;
@@ -54,7 +44,6 @@ public class Objetivo {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .append("id", id)
                 .append("descricao", descricao)
                 .append("dataEstipulada", dataEstipulada)
                 .append("valorEstipulado", valorEstipulado)

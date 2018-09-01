@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +33,7 @@ public class GastoController {
     }
 
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Gasto> insert(@RequestBody GastoDTO gastoDTO) {
+    public ResponseEntity<Gasto> insert(@RequestBody @Valid GastoDTO gastoDTO) {
         Gasto gasto = new Gasto();
 
         gasto.setData(gastoDTO.getData());
