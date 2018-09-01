@@ -17,27 +17,39 @@
 </ion-header>
 
 <ion-content>
-  
-  <div class="smog {{aqiStatus(aqi.data.aqi).code}}" style="background:url(assets/imgs/clouds.png) 25% 100% repeat-x">
+
+  <div>
   </div>
-  <div class="pollution-back {{aqiStatus(aqi.data.aqi).code}}" style="">
-    <ion-icon name="ios-nuclear-outline" class="pollution-sign"></ion-icon>
-    <div class="pollution-time">TODAY</div>
-    <div class="pollution-value">{{aqi.data.aqi}}</div>
+  <div class="julius-back {{aqiStatus(aqi.data.aqi).code}}" style="">
+    <ion-icon name="ios-nuclear-outline" class="julius-sign"></ion-icon>
+    <div class="julius-time">TODAY</div>
+    <div class="julius-value">{{aqi.data.aqi}}</div>
+    <ion-slides>
+      <ion-slide>
+        <ion-card class="card">
+          <div class="card-title">São Paulo</div>
+          <div class="card-subtitle">41 Listings</div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="card">
+          <div class="card-title">Amsterdam</div>
+          <div class="card-subtitle">64 Listings</div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="card">
+          <div class="card-title">San Francisco</div>
+          <div class="card-subtitle">72 Listings</div>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
 
     <div class="aqi-extra" padding style="left:0">
       {{aqi.data.city?aqi.data.city.name:''}}
     </div>
     <div class="aqi-extra" padding style="right:0">
       {{aqi.data.dominentpol?'Pollutant '+aqi.data.dominentpol:''}}
-    </div>
-  </div>
-  <div  class="aqi-status {{aqiStatus(aqi.data.aqi).code}}">
-    <div class="aqi-readable">{{aqiStatus(aqi.data.aqi).val}}</div>
-
-    <div class="chart-container">
-      <canvas #barCanvas class="aqi-graph" style="height:250px">
-    </canvas>
     </div>
   </div>
 </ion-content>

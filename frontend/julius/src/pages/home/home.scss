@@ -20,85 +20,41 @@ page-home {
       background: transparent;
     }
   
-    .pollution-sign:before {
+    .julius-sign:before {
       font-size: 30px;
     }
   
-    .pollution-time {
+    .julius-time {
       font-size: 15px;
       letter-spacing: 4px;
       font-weight: 600;
       padding-top: 10px;
     }
   
-    .pollution-value {
+    .julius-value {
       font-size: 120px;
       line-height: 120px;
       letter-spacing: 4px;
     }
     @media (max-width: 355px) {
-      .pollution-value {
+      .julius-value {
         font-size: 88px;
         line-height: 88px;
         letter-spacing: 4px;
       }
     }
   
-    .smog {
-      background: url("assets/imgs/clouds.png") 25% 70% repeat-x;
-      height: 50%;
-      width: 200em;
-      position: absolute;
-      z-index: 10;
-      -webkit-animation: cloudLoop 10s linear infinite;
+    .card {
+        color: #000000;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px; /* 5px rounded corners */
     }
-  
-    .smog.good {
-      -webkit-animation: cloudLoop 65s linear infinite;
-    }
-  
-    .smog.mod {
-      -webkit-animation: cloudLoop 60s linear infinite;
-    }
-  
-    .smog.unhealthy {
-      -webkit-animation: cloudLoop 35s linear infinite;
-    }
-  
-    .smog.vunhealthy {
-      -webkit-animation: cloudLoop 35s linear infinite;
-    }
-  
-    .smog.hazardous {
-      -webkit-animation: cloudLoop 35s linear infinite;
-    }
-    @-webkit-keyframes cloudLoop {
-      0% {
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-      }
-  
-      100% {
-        -webkit-transform: translate3d(-50%,0,0);
-        transform: translate3d(-50%,0,0);
-      }
-    }
-    @keyframes cloudLoop {
-      0% {
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-      }
-  
-      100% {
-        -webkit-transform: translate3d(-50%,0,0);
-        transform: translate3d(-50%,0,0);
-      }
-    }
-  
-    .pollution-back {
-      background: linear-gradient(270deg, #f5071a, #3e0306);
+
+    .julius-back {
+      background:  #88CE85;
       background-size: 400% 400%;
-      height: 50%;
+      height: 100%;
       text-align: center;
       padding-top: 60px;
       color: white;
@@ -141,22 +97,22 @@ page-home {
       width:220px;
       height:220px;
     }
-    .pollution-back.good {
-      background: #56ccf2;
+    .julius-back.good {
+      background: #88CE85;
       /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #56ccf2, #2f80ed);
+      background: -webkit-linear-gradient(to right, #88CE85, #2f80ed);
       /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(270deg, #56ccf2, #2f80ed);
+      background: linear-gradient(270deg, #88CE85, #2f80ed);
       /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       background-size: 400% 400%;
     }
   
     .aqi-status.good {
-      color: #56ccf2;
+      color: #88CE85;
     }
   
-    .pollution-back.mod {
-      background: #F2994A;
+    .julius-back.mod {
+      background: #88CE85;
       /* fallback for old browsers */
       background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);
       /* Chrome 10-25, Safari 5.1-6 */
@@ -169,21 +125,18 @@ page-home {
       color: #F2994A;
     }
   
-    .pollution-back.unhealthy {
-      background: #fe8c00;
+    .julius-back.unhealthy {
+      background: #88CE85;
       /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
-      /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #f83600, #fe8c00);
       /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       background-size: 400% 400%;
     }
   
     .aqi-status.unhealthy {
-      color: #fe4e00;
+      color: #88CE85;
     }
   
-    .pollution-back.vunhealthy {
+    .julius-back.vunhealthy {
       background: #b50518;
       /* fallback for old browsers */
       background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);
@@ -197,7 +150,7 @@ page-home {
       color: #b50518;
     }
   
-    .pollution-back.hazardous {
+    .julius-back.hazardous {
       background: #610661;
       /* fallback for old browsers */
       background: -webkit-linear-gradient(to right, #610661, #a1a5bc);
