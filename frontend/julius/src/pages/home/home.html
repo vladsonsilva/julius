@@ -18,32 +18,41 @@
 
 <ion-content>
 
-  <div>
-  </div>
   <div class="julius-back {{aqiStatus(aqi.data.aqi).code}}" style="">
     <ion-icon name="ios-nuclear-outline" class="julius-sign"></ion-icon>
     <div class="julius-time">TODAY</div>
     <div class="julius-value">{{aqi.data.aqi}}</div>
-    <ion-slides>
-      <ion-slide>
-        <ion-card class="card">
-          <div class="card-title">São Paulo</div>
-          <div class="card-subtitle">41 Listings</div>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card class="card">
-          <div class="card-title">Amsterdam</div>
-          <div class="card-subtitle">64 Listings</div>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card class="card">
-          <div class="card-title">San Francisco</div>
-          <div class="card-subtitle">72 Listings</div>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
+    <div>
+      <ion-slides>
+        <ion-slide>
+          <ion-card class="card">
+            <div class="card-title">Gasto Unico</div>
+            <div class="card-subtitle">Carro Zero</div>
+            <div class="card-desc">{{congrats}}</div>
+            <div class="card-value">R$5.456</div>
+            <div class="card-value-from">de R$ 42.000</div>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card class="card">
+            <div class="card-title">Gasto Unico</div>
+            <div class="card-subtitle">Pizza Hut</div>
+            <div class="card-desc">{{congrats}}</div>
+            <div class="card-value">R$85</div>
+            <div class="card-value-from">de R$ 42.000</div>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card class="card">
+            <div class="card-title">Gasto Unico</div>
+            <div class="card-subtitle">Carro Zero</div>
+            <div class="card-desc">{{congrats}}</div>
+            <div class="card-value">R$5.456</div>
+            <div class="card-value-from">de R$ 42.000</div>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
 
     <div class="aqi-extra" padding style="left:0">
       {{aqi.data.city?aqi.data.city.name:''}}
