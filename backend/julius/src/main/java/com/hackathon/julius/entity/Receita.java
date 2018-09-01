@@ -1,32 +1,24 @@
-package com.hackathon.julius.dto;
+package com.hackathon.julius.entity;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
-public class GastoDTO {
+@Entity
+public class Receita {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @NotEmpty(message = "O campo descrição é obrigatório.")
     private String descricao;
-
-    @NotNull(message = "O campo data é obrigatório")
     private LocalDate data;
-
-    @NotNull(message = "O campo valor é obrigatório")
     private Double valor;
 
-    public GastoDTO() {
-    }
-
-    public GastoDTO(Integer id, String descricao, Double valor, LocalDate data){
-        this.id = id;
-        this.descricao = descricao;
-        this.valor = valor;
-        this.data = data;
-
-    }
 
     public Integer getId() {
         return id;
@@ -58,5 +50,15 @@ public class GastoDTO {
 
     public void setValor(Double valor) {
         this.valor = valor;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("id", id)
+                .append("descricao", descricao)
+                .append("data", data)
+                .append("valor", valor)
+                .toString();
     }
 }
