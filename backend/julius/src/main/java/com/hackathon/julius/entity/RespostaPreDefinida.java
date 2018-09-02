@@ -1,6 +1,9 @@
 package com.hackathon.julius.entity;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class RespostaPreDefinida {
@@ -9,15 +12,12 @@ public class RespostaPreDefinida {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    private String resposta;
+    @Column(nullable = false)
+    @ManyToOne(targetEntity = PontoResposta.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<PontoResposta> pontos;
 
-    public RespostaPreDefinida() {
-
-    }
-
-    public RespostaPreDefinida(String resposta) {
-        this.resposta = resposta;
-    }
+    @Column(nullable = false)
+    private String descricao;
 
     public Integer getId() {
         return id;
@@ -27,11 +27,28 @@ public class RespostaPreDefinida {
         this.id = id;
     }
 
-    public String getResposta() {
-        return resposta;
+    public List<PontoResposta> getPontos() {
+        return pontos;
     }
 
-    public void setResposta(String resposta) {
-        this.resposta = resposta;
+    public void setPontos(List<PontoResposta> pontos) {
+        this.pontos = pontos;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("id", id)
+                .append("pontos", pontos)
+                .append("descricao", descricao)
+                .toString();
     }
 }

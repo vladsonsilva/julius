@@ -2,10 +2,7 @@ package com.hackathon.julius.entity;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -15,9 +12,21 @@ public class Objetivo {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
+    @Column(nullable = false)
     private String descricao;
+
+    @Column(nullable = false)
     private LocalDate dataEstipulada;
+
+    @Column(nullable = false)
     private Double valorEstipulado;
+
+    @Column(nullable = false)
+    private Double valorInvestido;
+
+    @Column(nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Usuario.class)
+    private Usuario usuario;
 
     public Integer getId() {
         return id;
@@ -51,6 +60,22 @@ public class Objetivo {
         this.valorEstipulado = valorEstipulado;
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Double getValorInvestido() {
+        return valorInvestido;
+    }
+
+    public void setValorInvestido(Double valorInvestido) {
+        this.valorInvestido = valorInvestido;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this)
@@ -58,6 +83,8 @@ public class Objetivo {
                 .append("descricao", descricao)
                 .append("dataEstipulada", dataEstipulada)
                 .append("valorEstipulado", valorEstipulado)
+                .append("valorInvestido", valorInvestido)
+                .append("usuario", usuario)
                 .toString();
     }
 }

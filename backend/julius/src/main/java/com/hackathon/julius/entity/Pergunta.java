@@ -13,7 +13,8 @@ public class Pergunta {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    private String pergunta;
+    @Column(nullable = false)
+    private String descricao;
 
     @OneToMany(targetEntity = RespostaPreDefinida.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<RespostaPreDefinida> respostasPredefinidas;
@@ -27,12 +28,12 @@ public class Pergunta {
         this.id = id;
     }
 
-    public String getPergunta() {
-        return pergunta;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setPergunta(String pergunta) {
-        this.pergunta = pergunta;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public List<RespostaPreDefinida> getRespostasPredefinidas() {
@@ -45,10 +46,10 @@ public class Pergunta {
 
     @Override
     public String toString() {
-        return "Pergunta{" +
-                "id=" + id +
-                ", pergunta='" + pergunta + '\'' +
-                ", respostasPredefinidas=" + respostasPredefinidas +
-                '}';
+        return new ToStringBuilder(this)
+                .append("id", id)
+                .append("descricao", descricao)
+                .append("respostasPredefinidas", respostasPredefinidas)
+                .toString();
     }
 }
