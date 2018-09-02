@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button menuToggle ion-button icon-only style="color:white">
+        <ion-icon name="ios-menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Julius</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only style="color:white" (click)="reload()">
+        <ion-icon name="ios-refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="julius-back">
+    <div class="julius-username">{{user.name}}</div>
+    <div>
+      <ion-slides>
+        <ion-slide>
+          <ion-card class="card">
+            <div class="card-title">Gasto Unico</div>
+            <div class="card-subtitle">Carro Zero</div>
+            <div class="card-desc">{{congrats}}</div>
+            <div class="card-value">R$5.456</div>
+            <div class="card-value-from">de R$ 42.000</div>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card class="card">
+            <div class="card-title">Gasto Unico</div>
+            <div class="card-subtitle">Pizza Hut</div>
+            <div class="card-desc">{{congrats}}</div>
+            <div class="card-value">R$85</div>
+            <div class="card-value-from">de R$ 42.000</div>
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+          <ion-card class="card">
+            <div class="card-title">Gasto Unico</div>
+            <div class="card-subtitle">Carro Zero</div>
+            <div class="card-desc">{{congrats}}</div>
+            <div class="card-value">R$5.456</div>
+            <div class="card-value-from">de R$ 42.000</div>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+</ion-content>
