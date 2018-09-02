@@ -1,4 +1,4 @@
-page-goals {
+page-rewards {
     text-align: center;
   
     .scroll-content {
@@ -88,7 +88,7 @@ page-goals {
 
 
     .julius-back {
-      background:  #88CE85;
+      background:  #50BEEF;
       background-size: 400% 400%;
       height: 100%;
       text-align: center;
@@ -238,15 +238,10 @@ page-goals {
         background-position: 0 50%;
       }
     }
-
-
-
     
   }
 
-
-.tabs-ios[tabsPlacement="top"] .tabbar {
-    background-color: #74A872;
+  .tabs-ios[tabsPlacement="top"] .tabbar {
+    background-color: #4AA9D4;
     border-bottom: 0;
-}
-
+  }
