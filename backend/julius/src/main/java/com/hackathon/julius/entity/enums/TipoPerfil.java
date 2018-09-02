@@ -1,6 +1,5 @@
 package com.hackathon.julius.entity.enums;
 
 public enum TipoPerfil {
-
-    IMPULSIVO, EQUILIBRADO, RADICAL;
+    IMPULSIVO, EQUILIBRADO, ECONOMICO;
 }

@@ -13,6 +13,9 @@ public class ItemMesExtrato {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private MesExtrato mesExtrato;
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private TipoItemEnum tipo;
@@ -42,6 +45,14 @@ public class ItemMesExtrato {
 
     public void setValor(BigDecimal valor) {
         this.valor = valor;
+    }
+
+    public MesExtrato getMesExtrato() {
+        return mesExtrato;
+    }
+
+    public void setMesExtrato(MesExtrato mesExtrato) {
+        this.mesExtrato = mesExtrato;
     }
 
     @Override

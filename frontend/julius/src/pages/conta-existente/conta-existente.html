@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="masters">
+  <div>
+    <div style="margin-left: auto; margin-right:auto; width: 30%; margin-top: 30%">
+      <img src="../../assets/imgs/icon_julius_Colorido.png" />
+    </div>
+  </div>
+
+  <div text-center style="height: 70%; margin-top: 20%">
+
+    <ion-list inset>
+      <p>
+        <ion-item id="rounded" color="blue-dark">
+          <ion-label>e-mail</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </p>
+      <p>
+        <ion-item id="rounded" color="blue-dark">
+          <ion-label>senha</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </p>
+      <p>
+        <span (click)="esqueciSenha()" style="opacity: 69%; color: white;">Esqueci minha senha</span>
+      </p>
+    </ion-list>
+
+    <p>
+      <button ion-button (click)="logar()" color="light" round>Login</button>
+    </p>
+  </div>
+</ion-content>

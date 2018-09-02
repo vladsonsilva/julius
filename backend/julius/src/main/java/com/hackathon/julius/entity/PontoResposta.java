@@ -19,6 +19,13 @@ public class PontoResposta {
 
     @Column(nullable = false)
     private BigDecimal total;
+    PontoResposta(){}
+
+    public PontoResposta(Integer id, TipoPerfil tipoPerfil, BigDecimal total) {
+        this.id = id;
+        this.tipoPerfil = tipoPerfil;
+        this.total = total;
+    }
 
     public Integer getId() {
         return id;

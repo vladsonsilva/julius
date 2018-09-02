@@ -3,6 +3,7 @@ package com.hackathon.julius.dto;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 public class UsuarioDTO {
@@ -12,6 +13,8 @@ public class UsuarioDTO {
     private String usuario;
     private String numeroCartao;
     private BigDecimal renda;
+    private BigDecimal gastoFixo;
+    private LocalDate dataNascimento;
     private List<RespostaPreDefinidaDTO> respostas;
 
     public String getNome() {
@@ -60,6 +63,22 @@ public class UsuarioDTO {
 
     public void setRespostas(List<RespostaPreDefinidaDTO> respostas) {
         this.respostas = respostas;
+    }
+
+    public BigDecimal getGastoFixo() {
+        return gastoFixo;
+    }
+
+    public void setGastoFixo(BigDecimal gastoFixo) {
+        this.gastoFixo = gastoFixo;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     @Override

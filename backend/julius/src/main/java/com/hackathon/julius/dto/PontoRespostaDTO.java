@@ -11,6 +11,7 @@ public class PontoRespostaDTO {
 
     private Double total;
 
+
     public TipoPerfil getTipoPerfil() {
         return tipoPerfil;
     }

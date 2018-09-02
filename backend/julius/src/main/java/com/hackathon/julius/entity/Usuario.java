@@ -5,6 +5,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 
 @Entity
@@ -30,14 +32,25 @@ public class Usuario {
     private BigDecimal renda;
 
     @Column(nullable = false)
+    private BigDecimal gastoFixo;
+
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private TipoPerfil tipoPerfil;
 
-    @OneToMany(cascade = CascadeType.ALL, targetEntity = Objetivo.class)
-    private List<Objetivo> objetivos;
+    @Column(nullable = false)
+    private LocalDate dataNascimento;
 
-    @OneToMany(cascade = CascadeType.ALL, targetEntity = MesExtrato.class)
-    private List<MesExtrato> extratos;
+    public Usuario() { }
+
+    public Usuario(Integer id) {
+        this.id = id;
+    }
+
+    @Transient
+    public Integer getIdade() {
+        return Period.between(dataNascimento, LocalDate.now()).getYears();
+    }
 
     public Integer getId() {
         return id;
@@ -95,20 +108,20 @@ public class Usuario {
         this.renda = renda;
     }
 
-    public List<Objetivo> getObjetivos() {
-        return objetivos;
+    public BigDecimal getGastoFixo() {
+        return gastoFixo;
     }
 
-    public void setObjetivos(List<Objetivo> objetivos) {
-        this.objetivos = objetivos;
+    public void setGastoFixo(BigDecimal gastoFixo) {
+        this.gastoFixo = gastoFixo;
     }
 
-    public List<MesExtrato> getExtratos() {
-        return extratos;
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setExtratos(List<MesExtrato> extratos) {
-        this.extratos = extratos;
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     @Override
@@ -121,8 +134,6 @@ public class Usuario {
                 .append("numeroCartao", numeroCartao)
                 .append("renda", renda)
                 .append("tipoPerfil", tipoPerfil)
-                .append("objetivos", objetivos)
-                .append("extratos", extratos)
                 .toString();
     }
 }

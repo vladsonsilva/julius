@@ -1,5 +1,7 @@
 package com.hackathon.julius.dto;
 
+import com.hackathon.julius.entity.RespostaPreDefinida;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -10,25 +12,25 @@ public class PerguntaDTO {
 
     @NotEmpty(message = "O campo pergunta é obrigatório")
     private String pergunta;
+    private List<RespostaPreDefinida> respostasPredefinidas;
 
-    private List<String> respostasPredefinidas;
     public PerguntaDTO(){}
     public PerguntaDTO(Integer id,String pergunta){
         this.pergunta = pergunta;
         this.id = id;
-        this.respostasPredefinidas = new ArrayList<String>();
+        this.respostasPredefinidas = new ArrayList<RespostaPreDefinida>();
     }
-    public PerguntaDTO(Integer id,String pergunta, List<String> respostasPredefinidas){
+    public PerguntaDTO(Integer id,String pergunta, List<RespostaPreDefinida> respostasPredefinidas){
         this.pergunta = pergunta;
         this.id = id;
         this.respostasPredefinidas = respostasPredefinidas;
     }
 
-    public List<String> getRespostasPredefinidas() {
+    public List<RespostaPreDefinida> getRespostasPredefinidas() {
         return respostasPredefinidas;
     }
 
-    public void setRespostasPredefinidas(List<String> respostasPredefinidas) {
+    public void setRespostasPredefinidas(List<RespostaPreDefinida> respostasPredefinidas) {
         this.respostasPredefinidas = respostasPredefinidas;
     }
 

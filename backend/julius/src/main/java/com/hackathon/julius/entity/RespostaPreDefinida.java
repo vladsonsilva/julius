@@ -13,12 +13,18 @@ public class RespostaPreDefinida {
     private Integer id;
 
     @JoinColumn(nullable = false)
-    @ManyToOne(targetEntity = PontoResposta.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = PontoResposta.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<PontoResposta> pontos;
 
     @Column(nullable = false)
     private String descricao;
+    public RespostaPreDefinida(Integer id, List<PontoResposta> pontos, String descricao) {
+        this.id = id;
+        this.pontos = pontos;
+        this.descricao = descricao;
+    }
 
+    RespostaPreDefinida(){}
     public Integer getId() {
         return id;
     }

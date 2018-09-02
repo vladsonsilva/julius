@@ -3,8 +3,12 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 
-import { MyApp } from './app.component';
+import { ContaExistentePage } from '../pages/conta-existente/conta-existente';
+import { DescobrirPerfilPage } from './../pages/descobrir-perfil/descobrir-perfil';
 import { GoalsPage } from '../pages/goals/goals';
+import { ListPage } from './../pages/list/list';
+import { LoginPage} from '../pages/login/login';
+import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -14,11 +18,16 @@ import { RewardsPage } from '../pages/rewards/rewards';
 
 @NgModule({
   declarations: [
-    MyApp,
+    ContaExistentePage,
+    DescobrirPerfilPage,
     GoalsPage,
     TabsPage,
     RewardsPage,
     ProfilePage
+    ListPage,
+    LoginPage,
+    MyApp,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -27,11 +36,16 @@ import { RewardsPage } from '../pages/rewards/rewards';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    ContaExistentePage,
+    DescobrirPerfilPage,
     GoalsPage,
     TabsPage,
     RewardsPage,
     ProfilePage
+    LoginPage,
+    ListPage,
+    MyApp,
+    TabsPage
   ],
   providers: [
     StatusBar,

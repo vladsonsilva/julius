@@ -5,7 +5,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 public class MesExtrato {
@@ -23,13 +22,8 @@ public class MesExtrato {
     @Column(nullable = false)
     private BigDecimal saldo;
 
-    @JoinColumn(nullable = false)
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Usuario.class)
     private Usuario usuario;
-
-    @JoinColumn(nullable = false)
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = ItemMesExtrato.class)
-    private List<ItemMesExtrato> items;
 
     public Integer getId() {
         return id;
@@ -71,14 +65,6 @@ public class MesExtrato {
         this.usuario = usuario;
     }
 
-    public List<ItemMesExtrato> getItems() {
-        return items;
-    }
-
-    public void setItems(List<ItemMesExtrato> items) {
-        this.items = items;
-    }
-
     @Override
     public String toString() {
         return new ToStringBuilder(this)
@@ -87,7 +73,6 @@ public class MesExtrato {
                 .append("gastoTotal", gastoTotal)
                 .append("saldo", saldo)
                 .append("usuario", usuario)
-                .append("items", items)
                 .toString();
     }
 }
