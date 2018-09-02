@@ -5,10 +5,10 @@ import 'rxjs/add/operator/toPromise';
 import { LoadingController } from 'ionic-angular';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-goals',
+  templateUrl: 'goals.html'
 })
-export class HomePage {
+export class GoalsPage {
   aqi: any;
   congrats: String;
   user: any;
