@@ -18,6 +18,10 @@ export class DescobrirPerfilPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  iniciarConversa(){
+    
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DescobrirPerfilPage');
   }
