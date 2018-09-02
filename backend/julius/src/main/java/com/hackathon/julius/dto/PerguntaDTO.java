@@ -1,13 +1,18 @@
 package com.hackathon.julius.dto;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PerguntaDTO {
     private Integer id;
-    private String pergunta;
-    private List<String> respostasPredefinidas;
 
+    @NotEmpty(message = "O campo pergunta é obrigatório")
+    private String pergunta;
+
+    private List<String> respostasPredefinidas;
+    public PerguntaDTO(){}
     public PerguntaDTO(Integer id,String pergunta){
         this.pergunta = pergunta;
         this.id = id;
