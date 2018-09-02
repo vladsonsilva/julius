@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { GoalsPage } from '../goals/goals';
+import { RewardsPage } from '../rewards/rewards';
+
+import {Tabs} from 'ionic-angular';
+import { ProfilePage } from '../profile/profile';
 
 @Component({
   selector: 'page-tabs',
@@ -8,9 +12,20 @@ import { GoalsPage } from '../goals/goals';
 })
 export class TabsPage {
 
-  tab1Root = GoalsPage;
+  @ViewChild("tabs") tabs: Tabs;
+
+
+  tab1Root = ProfilePage;
+  tab2Root = RewardsPage;
+  tab3Root = GoalsPage;
+  //tab2Root = RewardsPage;
+  //tab3Root = GoalsPage;
 
   constructor() {
 
+  }
+
+  ngAfterViewInit() {
+    this.tabs.select(1);
   }
 }

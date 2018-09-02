@@ -13,12 +13,17 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ProfilePage } from '../pages/profile/profile';
+import { RewardsPage } from '../pages/rewards/rewards';
 
 @NgModule({
   declarations: [
     ContaExistentePage,
     DescobrirPerfilPage,
     GoalsPage,
+    TabsPage,
+    RewardsPage,
+    ProfilePage
     ListPage,
     LoginPage,
     MyApp,
@@ -34,11 +39,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContaExistentePage,
     DescobrirPerfilPage,
     GoalsPage,
+    TabsPage,
+    RewardsPage,
+    ProfilePage
     LoginPage,
     ListPage,
     MyApp,
     TabsPage
-
   ],
   providers: [
     StatusBar,

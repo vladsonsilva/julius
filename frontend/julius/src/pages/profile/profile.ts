@@ -6,10 +6,10 @@ import { LoadingController } from 'ionic-angular';
 import { Tabs } from 'ionic-angular/navigation/nav-interfaces';
 
 @Component({
-  selector: 'page-goals',
-  templateUrl: 'goals.html'
+  selector: 'page-profile',
+  templateUrl: 'profile.html'
 })
-export class GoalsPage {
+export class ProfilePage {
   aqi: any;
   congrats: String;
   user: any;

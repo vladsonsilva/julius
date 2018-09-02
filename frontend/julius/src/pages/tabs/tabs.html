@@ -1,5 +1,5 @@
-<ion-tabs tabsPlacement="top">
-  <ion-tab [root]="tab1Root" tabTitle="Objetivos"></ion-tab>
-  <ion-tab [root]="tab1Root" tabTitle="Recompensas"></ion-tab>
-  <ion-tab [root]="tab1Root" tabTitle="Rendimento"></ion-tab>
+<ion-tabs #tabs tabsPlacement="top" [selectedIndex]="tabsIndex">
+    <ion-tab [root]="tab1Root" tabIcon="icon01" tabindex="1"></ion-tab>
+    <ion-tab [root]="tab2Root" tabIcon="icon02" tabindex="2"></ion-tab>
+    <ion-tab [root]="tab3Root" tabIcon="icon03" tabindex="3"></ion-tab>
 </ion-tabs>

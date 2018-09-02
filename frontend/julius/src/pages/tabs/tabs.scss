@@ -1,2 +1,14 @@
-page-tabs {
+ion-icon {
+    &[class*="icon01"] {
+        background: url(../assets/imgs/icon01-selected.png) no-repeat 50% 50%;
+        background-size: contain;
+    }
+    &[class*="icon02"] {
+        background: url(../assets/imgs/icon02-selected.png) no-repeat 50% 50%;
+        background-size: contain;
+    }
+    &[class*="icon03"] {
+        background: url(../assets/imgs/icon03-selected.png) no-repeat 50% 50%;
+        background-size: contain;
+    }
 }

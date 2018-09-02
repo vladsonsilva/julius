@@ -1,15 +1,14 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { LoadingController } from 'ionic-angular';
-import { Tabs } from 'ionic-angular/navigation/nav-interfaces';
 
 @Component({
-  selector: 'page-goals',
-  templateUrl: 'goals.html'
+  selector: 'page-rewards',
+  templateUrl: 'rewards.html'
 })
-export class GoalsPage {
+export class RewardsPage {
   aqi: any;
   congrats: String;
   user: any;
