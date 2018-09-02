@@ -26,3 +26,10 @@ $product-font-path: $font-path !default;
   font-weight: 700;
   src: local("Nunito Bold"), local("Nunito-Bold"), url("#{$product-font-path}/Nunito-Bold.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Nunito SemiBold"), local("Nunito-SemiBold"), url("#{$product-font-path}/Nunito-SemiBold.ttf") format("truetype");
+}

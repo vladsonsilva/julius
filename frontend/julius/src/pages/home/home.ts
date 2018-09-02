@@ -11,10 +11,12 @@ import { LoadingController } from 'ionic-angular';
 export class HomePage {
   aqi: any;
   congrats: String;
+  user: any;
   constructor(public loader: LoadingController, public navCtrl: NavController, public http: Http) {
     this.http = http;
     this.loader = loader;
     this.aqi = { data: {} };
+    this.user = { name: "Pedro"};
     this.congrats = "Parabéns!\nVocê já juntou";
     this.reload();
   }
