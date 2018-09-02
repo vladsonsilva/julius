@@ -132,7 +132,7 @@ public class UsuarioController {
 
     @PostMapping(path = "/actions/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Usuario> login(@RequestBody @Valid UsuarioDTO usuarioDTO) {
-        Optional<Usuario> usuario = Optional.ofNullable(usuarioRepository.findByUsuarioAndPassword(usuarioDTO.getUsuario(), usuarioDTO.getSenha()));
+        Optional<Usuario> usuario = Optional.ofNullable(usuarioRepository.findByUsuarioAndSenha(usuarioDTO.getUsuario(), usuarioDTO.getSenha()));
 
         return usuario.isPresent() ? ResponseEntity.ok(usuario.get()) : ResponseEntity.notFound().build();
     }

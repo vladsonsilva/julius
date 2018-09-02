@@ -9,5 +9,5 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
 
     public List<Usuario> findAll();
 
-    public Usuario findByUsuario(String usuario);
+    public Usuario findByUsuarioAndSenha(String usuario, String password);
 }

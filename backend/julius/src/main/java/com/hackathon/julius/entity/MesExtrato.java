@@ -23,11 +23,11 @@ public class MesExtrato {
     @Column(nullable = false)
     private BigDecimal saldo;
 
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Usuario.class)
     private Usuario usuario;
 
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = ItemMesExtrato.class)
     private List<ItemMesExtrato> items;
 

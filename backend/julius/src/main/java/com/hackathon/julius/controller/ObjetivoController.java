@@ -21,19 +21,19 @@ public class ObjetivoController {
     private ObjetivoRepository objetivoRepository;
 
     @GetMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Objetivo>> getAll() {
+    public ResponseEntity<List<Objetivo>> getAll(@RequestHeader("username") String usuario) {
         return ResponseEntity.ok(objetivoRepository.findAll());
     }
 
     @GetMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Objetivo> getById(@PathVariable("id") Integer id) {
+    public ResponseEntity<Objetivo> getById(@PathVariable("id") Integer id, @RequestHeader("username") String usuario) {
         Optional<Objetivo> opt =  objetivoRepository.findById(id);
 
         return opt.isPresent() ? ResponseEntity.ok(opt.get()) : ResponseEntity.notFound().build();
     }
 
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Objetivo> insert(@RequestBody @Valid ObjetivoDTO objetivoDTO) {
+    public ResponseEntity<Objetivo> insert(@RequestBody @Valid ObjetivoDTO objetivoDTO, @RequestHeader("username") String usuario) {
         Objetivo objetivo = new Objetivo();
 
         objetivo.setDataEstipulada(objetivoDTO.getDataEstipulada());
@@ -44,7 +44,7 @@ public class ObjetivoController {
     }
 
     @PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Objetivo> update (@PathVariable("id") Integer id, @RequestBody @Valid ObjetivoDTO objetivoDTO) {
+    public ResponseEntity<Objetivo> update (@PathVariable("id") Integer id, @RequestBody @Valid ObjetivoDTO objetivoDTO, @RequestHeader("username") String usuario) {
         Optional<Objetivo> objetivoOld = objetivoRepository.findById(id);
         Objetivo newObjetivo = new Objetivo();
 
@@ -60,7 +60,7 @@ public class ObjetivoController {
     }
 
     @DeleteMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Objetivo> update (@PathVariable("id") Integer id) {
+    public ResponseEntity<Objetivo> update (@PathVariable("id") Integer id, @RequestHeader("username") String usuario) {
         Optional<Objetivo> objetivoOld = objetivoRepository.findById(id);
         objetivoRepository.delete(objetivoOld.get());
 

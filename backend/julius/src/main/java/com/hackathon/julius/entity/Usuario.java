@@ -33,10 +33,10 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     private TipoPerfil tipoPerfil;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Objetivo.class)
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = Objetivo.class)
     private List<Objetivo> objetivos;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = MesExtrato.class)
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = MesExtrato.class)
     private List<MesExtrato> extratos;
 
     public Integer getId() {

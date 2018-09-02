@@ -24,7 +24,7 @@ public class Objetivo {
     @Column(nullable = false)
     private Double valorInvestido;
 
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Usuario.class)
     private Usuario usuario;
 

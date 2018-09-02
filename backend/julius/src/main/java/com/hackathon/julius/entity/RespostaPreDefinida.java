@@ -12,7 +12,7 @@ public class RespostaPreDefinida {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     @ManyToOne(targetEntity = PontoResposta.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<PontoResposta> pontos;
 
