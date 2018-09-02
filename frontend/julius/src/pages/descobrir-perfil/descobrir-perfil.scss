@@ -1,12 +1,24 @@
 page-descobrir-perfil {
-    #rounded {
-        white-space: normal;
+    #rounded {     
         width: 90%;
-        height: 180px;
+        height: 100%;
         -moz-border-radius: 50px;
         -webkit-border-radius: 50px;
         border-radius: 30px;
         margin-left: 0 auto;  
         margin-right: 20px;
+    }
+
+    .quebraLinha{
+        white-space: normal;
+        font-size: 17pt;
+    }
+    .quebraLinhaCliente{
+        white-space: normal;
+        font-size: 17pt;
+        margin-left: 10%;
+        text-align: right;
+        border-color: #50BEEF;
+        text-decoration-color: #50BEEF;
     }
 }
