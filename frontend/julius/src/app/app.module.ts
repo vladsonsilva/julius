@@ -3,8 +3,12 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 
-import { MyApp } from './app.component';
+import { ContaExistentePage } from '../pages/conta-existente/conta-existente';
+import { DescobrirPerfilPage } from './../pages/descobrir-perfil/descobrir-perfil';
 import { GoalsPage } from '../pages/goals/goals';
+import { ListPage } from './../pages/list/list';
+import { LoginPage} from '../pages/login/login';
+import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -12,8 +16,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
-    MyApp,
+    ContaExistentePage,
+    DescobrirPerfilPage,
     GoalsPage,
+    ListPage,
+    LoginPage,
+    MyApp,
     TabsPage
   ],
   imports: [
@@ -23,9 +31,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    ContaExistentePage,
+    DescobrirPerfilPage,
     GoalsPage,
+    LoginPage,
+    ListPage,
+    MyApp,
     TabsPage
+
   ],
   providers: [
     StatusBar,

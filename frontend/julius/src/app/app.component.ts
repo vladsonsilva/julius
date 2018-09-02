@@ -6,6 +6,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { GoalsPage } from '../pages/goals/goals';
 import { ListPage } from '../pages/list/list';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage} from '../pages/login/login';
+import { ContaExistentePage } from '../pages/conta-existente/conta-existente';
+import { DescobrirPerfilPage } from '../pages/descobrir-perfil/descobrir-perfil';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,8 +16,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  //rootPage: any = GoalsPage;
-  rootPage:any = TabsPage;
+  rootPage:any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -24,9 +26,13 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: GoalsPage },
-      { title: 'List', component: ListPage }
+      { title: 'List', component: ListPage },
+      { title: 'TabsPage', component: TabsPage},
+      { title: 'LoginPage', component: LoginPage},
+      { title: 'ContaExistentePage', component: ContaExistentePage},
+      { title: 'DescobrirPerfilPage', component: DescobrirPerfilPage}
+      
     ];
-
   }
 
   initializeApp() {
